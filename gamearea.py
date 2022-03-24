@@ -11,6 +11,7 @@ class GameArea:
         self.draw_middle_line()
 
     def setup_screen(self):
+        """set up the initial screen"""
         self.screen = Screen()
         self.screen.setup(width=self.widow_width, height=self.widow_height, startx=1)
         self.screen.bgcolor("black")
@@ -27,9 +28,9 @@ class GameArea:
             news_turtle.shapesize(stretch_wid=1, stretch_len=0.25)
             news_turtle.setposition(x=0, y=self.ycor)
             self.ycor += 40
-            print(self.ycor)
 
         self.screen.update()
 
     def dont_exit(self):
+        """stop the screen from exiting"""
         self.screen.exitonclick()
