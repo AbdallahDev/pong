@@ -1,0 +1,16 @@
+pong game components:
+
+- game area
+    - set margins
+    - divide it
+- The paddles
+    - creating them
+    - moving them
+- The Ball
+    - create it
+    - move it
+    - detect collision
+        - with the wall
+        - with the paddles
+- the scoreboard
+    - increase it with each goal
