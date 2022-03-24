@@ -1,16 +1,15 @@
-# This is a sample Python script.
+from turtle import Screen, Turtle
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from gamearea import GameArea
 
+screen = Screen()
+screen.setup(width=1400, height=800, startx=1)
+screen.bgcolor("black")
+screen.title("Pong Game")
+screen.tracer(False)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+game_area = GameArea(screen.window_height())
+print(game_area.ycor)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+screen.update()
+screen.exitonclick()
