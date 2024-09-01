@@ -2,8 +2,8 @@
 # todo: finish the game after the 10 points
 from turtle import Turtle
 
-from global_constants import DEFAULT_SCORE, SCORE_INCREASE_VALUE, SCORE_TXT, SCORE_TXT_ALIGNMENT, SCORE_TXT_FONT, \
-    SCORE_TXT_DEFAULT_POSITION
+from global_constants import DEFAULT_SCORE, SCORE_INCREASE_VALUE, SCORE_TXT_ALIGNMENT, SCORE_TXT_FONT, \
+    GAME_OVER_TXT, GAME_OVER_ALIGNMENT, GAME_OVER_FONT, GAME_OVER_COLOR, GAME_OVER_POSITION
 
 
 class ScoreBoard(Turtle):
@@ -19,10 +19,21 @@ class ScoreBoard(Turtle):
         self.update_score()
 
     def update_score(self):
-        """Updates the score on the screen"""""
+        """Updates the score value"""
         self.score += SCORE_INCREASE_VALUE
         self.write_score_txt()
+        if self.game_over():
+            return True
 
     def write_score_txt(self):
+        """Writes the score on the screen"""
         self.clear()
         self.write(arg=self.score, align=SCORE_TXT_ALIGNMENT, font=SCORE_TXT_FONT)
+
+    def game_over(self):
+        """checks if the score reached 10"""
+        if self.score == 10:
+            self.goto(GAME_OVER_POSITION)
+            self.color(GAME_OVER_COLOR)
+            self.write(arg=GAME_OVER_TXT, align=GAME_OVER_ALIGNMENT, font=GAME_OVER_FONT)
+            return True

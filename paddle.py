@@ -27,6 +27,7 @@ class Paddle:
             seg.move(direction=-1)
 
     def hit_ball(self, ball, x_direction):
+        """Checks if the paddle hits the ball"""""
         if self.segments[0].distance(ball) <= 10:
             ball.bounce(x_direction=x_direction, y_direction=+1, increase_ball_speed=True)
         elif self.segments[1].distance(ball) <= 10:

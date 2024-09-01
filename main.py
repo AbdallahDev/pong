@@ -30,19 +30,20 @@ def game():
     turtle.onkeypress(fun=l_paddle.go_up, key=KEYS[2])
     turtle.onkeypress(fun=l_paddle.go_down, key=KEYS[3])
 
-    while True:
-        ball.move()
-        r_paddle.hit_ball(ball, x_direction=-1)
-        l_paddle.hit_ball(ball, x_direction=+1)
+    end_game = False
+    while not end_game:
+        if not ball.move(r_paddle=r_paddle, l_paddle=l_paddle, l_scoreboard=l_scoreboard, r_scoreboard=r_scoreboard):
+            end_game = True
 
         turtle.update()
         time.sleep(0.01)
 
 
 while True:
-    # play = turtle.textinput(title=PROMPT_TITLE, prompt=PROMPT_TXT)
-    play = 'y'
+    play = turtle.textinput(title=PROMPT_TITLE, prompt=PROMPT_TXT)
+    # play = 'y'
     if play == 'y':
+        turtle.clearscreen()
         game()
     elif play == 'n':
         break
