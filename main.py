@@ -5,6 +5,7 @@ import time
 import turtle
 
 from arena import Arena
+from ball import Ball
 from global_constants import PROMPT_TITLE, PROMPT_TXT, R_PADDLE_COORDINATES, L_PADDLE_COORDINATES
 from paddle import Paddle
 
@@ -16,6 +17,7 @@ def game():
     Arena()
     r_paddle = Paddle(coordinates=R_PADDLE_COORDINATES)
     l_paddle = Paddle(coordinates=L_PADDLE_COORDINATES)
+    ball = Ball()
 
     turtle.onkeypress(fun=r_paddle.go_up, key='Up')
     turtle.onkeypress(fun=r_paddle.go_down, key='Down')
