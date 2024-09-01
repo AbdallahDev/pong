@@ -1,6 +1,7 @@
 # Global constants file
 
 # main file
+KEYS = ('Up', 'Down', 'w', 's')
 
 # arena file
 SCREEN_WIDTH = 800
@@ -33,3 +34,13 @@ BALL_FLOOR_HIT_LIMIT = -(SCREEN_HEIGHT / 2 - 10)
 BALL_STEPS = 1
 RIGHT_GOAL_HIT = (SCREEN_WIDTH / 2)
 LEFT_GOAL_HIT = -(SCREEN_WIDTH / 2)
+
+# scoreboard file
+DEFAULT_SCORE = -1
+SCORE_INCREASE_VALUE = 1
+SCORE_TXT = "Score: "
+SCORE_TXT_ALIGNMENT = 'left'
+SCORE_TXT_FONT = ('Erbos Draco 1st Open NBP', 30, 'normal')
+SCORE_TXT_DEFAULT_POSITION = (-(SCREEN_WIDTH / 2 - 40), (SCREEN_HEIGHT / 2 - 60))
+R_SCORE_POSITION = (60, (SCREEN_HEIGHT / 2 - 50))
+L_SCORE_POSITION = (-80, (SCREEN_HEIGHT / 2 - 50))
