@@ -28,8 +28,8 @@ class Paddle:
 
     def hit_ball(self, ball, x_direction):
         if self.segments[0].distance(ball) <= 10:
-            ball.bounce(x_direction=x_direction, y_direction=+1)
+            ball.bounce(x_direction=x_direction, y_direction=+1, increase_ball_speed=True)
         elif self.segments[1].distance(ball) <= 10:
-            ball.bounce(x_direction=x_direction, y_direction=0)
+            ball.bounce(x_direction=x_direction, y_direction=0, increase_ball_speed=True)
         elif self.segments[2].distance(ball) <= 10:
-            ball.bounce(x_direction=x_direction, y_direction=-1)
+            ball.bounce(x_direction=x_direction, y_direction=-1, increase_ball_speed=True)

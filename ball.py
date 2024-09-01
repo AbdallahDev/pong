@@ -1,5 +1,3 @@
-# todo : i want to increase the ball speed
-# todo: i should reposition the ball to the center after it breachs the goal
 from turtle import Turtle
 
 from global_constants import BALL_SHAPE, BALL_STRETCH_WID, BALL_STRETCH_LEN, BALL_CEILING_HIT_LIMIT, \
