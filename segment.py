@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-from global_constants import SEGMENT_STEPS, CEILING_HIT_POINT, FLOOR_HIT_POINT
+from global_constants import SEGMENT_STEPS, SEGMENT_CEILING_HIT_POINT, SEGMENT_FLOOR_HIT_POINT
 
 
 class Segment(Turtle):
