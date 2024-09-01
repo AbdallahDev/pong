@@ -1,6 +1,3 @@
-# todo : create the paddle class
-# todo : create the ball class
-# todo : scoreboard class
 import time
 import turtle
 

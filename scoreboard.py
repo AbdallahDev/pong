@@ -1,5 +1,3 @@
-# todo : increases the score
-# todo: finish the game after the 10 points
 from turtle import Turtle
 
 from global_constants import DEFAULT_SCORE, SCORE_INCREASE_VALUE, SCORE_TXT_ALIGNMENT, SCORE_TXT_FONT, \
