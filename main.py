@@ -25,6 +25,10 @@ def game():
     turtle.onkeypress(fun=l_paddle.go_down, key='s')
 
     while True:
+        ball.move()
+        r_paddle.hit_ball(ball, x_direction=-1)
+        l_paddle.hit_ball(ball, x_direction=+1)
+
         turtle.update()
         time.sleep(0.01)
 

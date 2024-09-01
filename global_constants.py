@@ -25,3 +25,6 @@ FLOOR_HIT_POINT = -(SCREEN_HEIGHT / 2)
 
 # ball file
 BALL_SHAPE = 'circle'
+STRETCH_WID = 0.5
+STRETCH_LEN = 0.5
+
