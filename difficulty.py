@@ -9,6 +9,7 @@ class Difficulty:
     def __init__(self):
         super().__init__()
         self.ball_increasing_speed = BALL_INCREASE_SPEED_VALUES[0]
+        # self.paddle_movement_chance =
         self.set_difficulty()
 
     def set_difficulty(self, prompt_msg=DIFFICULTY_PROMPT_MSG):

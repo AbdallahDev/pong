@@ -47,6 +47,7 @@ class Paddle:
         else:
             paddle_ycor = ball_ycor_possible_ycors[2]
 
-        positions = [(-380, paddle_ycor + 20), (-380, paddle_ycor), (-380, paddle_ycor - 20)]
-        for seg in self.segments:
-            seg.goto(positions[self.segments.index(seg)])
+        segments_positions = [(-380, paddle_ycor + 20), (-380, paddle_ycor), (-380, paddle_ycor - 20)]
+        if random.randint(0, 15) == 0:
+            for seg in self.segments:
+                seg.goto(segments_positions[self.segments.index(seg)])

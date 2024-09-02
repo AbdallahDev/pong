@@ -6,7 +6,7 @@ from arena import Arena
 from ball import Ball
 from global_constants import (PROMPT_TITLE, PROMPT_TXT, R_PADDLE_COORDINATES,
                               L_PADDLE_COORDINATES, R_SCORE_POSITION, L_SCORE_POSITION, KEYS, SLEEP_TIME,
-                              TRACER_DEFAULT_VALUE)
+                              TRACER_DEFAULT_VALUE, PLAY_ACCEPT_INPUT, PLAY_DENY_INPUT)
 from paddle import Paddle
 from scoreboard import ScoreBoard
 from difficulty import Difficulty
@@ -48,8 +48,8 @@ def game():
 
 while True:
     play = turtle.textinput(title=PROMPT_TITLE, prompt=PROMPT_TXT).lower()
-    if play == 'y':
+    if play == PLAY_ACCEPT_INPUT:
         turtle.clearscreen()
         game()
-    elif play == 'n':
+    elif play == PLAY_DENY_INPUT:
         break

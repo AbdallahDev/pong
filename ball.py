@@ -74,6 +74,6 @@ class Ball(Turtle):
         self.goto(BALL_CENTERING_DEFAULT_POSITION)
 
     def increase_speed(self, increase_speed=True):
-        """Increases the ball speed"""
+        """Increases the ball speed"""""
         if increase_speed:
             self.speed += self.increasing_speed
