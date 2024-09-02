@@ -20,7 +20,7 @@ def game():
     single_mode = playing_mode.single_mode
     difficulty = Difficulty()
     Arena()
-    ball = Ball(difficulty.ball_increasing_speed)
+    ball = Ball()
 
     r_scoreboard = ScoreBoard(position=R_SCORE_POSITION)
     l_scoreboard = ScoreBoard(position=L_SCORE_POSITION)
@@ -41,7 +41,7 @@ def game():
             end_game = True
 
         if single_mode:
-            l_paddle.move(ball.ycor())
+            l_paddle.move(ball.ycor(), paddle_movement_chance_up_range=difficulty.paddle_movement_chance)
         turtle.update()
         time.sleep(SLEEP_TIME)
 

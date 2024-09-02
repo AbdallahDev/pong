@@ -1,7 +1,8 @@
 import random
 
 from segment import Segment
-from global_constants import PADDLE_SEGMENT_WIDTH, PADDLE_DIRECTION_NEGATION_VALUE, PADDLE_DIRECTION_MAINTAIN_VALUE
+from global_constants import PADDLE_SEGMENT_WIDTH, PADDLE_DIRECTION_NEGATION_VALUE, PADDLE_DIRECTION_MAINTAIN_VALUE, \
+    PADDLE_CHANCE_DOWN_RANGE, PADDLE_CHANCE_VALUE
 
 
 class Paddle:
@@ -36,7 +37,7 @@ class Paddle:
         elif self.segments[2].distance(ball) <= 10:
             ball.bounce(x_direction=x_direction, y_direction=-1, increase_ball_speed=True)
 
-    def move(self, ball_ycor):
+    def move(self, ball_ycor, paddle_movement_chance_up_range):
         """Moves the paddle automatically"""""
         ball_ycor_possible_ycors = [ball_ycor + 20, ball_ycor, ball_ycor - 20]
 
@@ -48,6 +49,6 @@ class Paddle:
             paddle_ycor = ball_ycor_possible_ycors[2]
 
         segments_positions = [(-380, paddle_ycor + 20), (-380, paddle_ycor), (-380, paddle_ycor - 20)]
-        if random.randint(0, 15) == 0:
+        if random.randint(PADDLE_CHANCE_DOWN_RANGE, paddle_movement_chance_up_range) == PADDLE_CHANCE_VALUE:
             for seg in self.segments:
                 seg.goto(segments_positions[self.segments.index(seg)])

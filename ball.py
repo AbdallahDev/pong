@@ -9,11 +9,10 @@ from global_constants import BALL_SHAPE, BALL_STRETCH_WID, BALL_STRETCH_LEN, BAL
 class Ball(Turtle):
     """"Represents the ball movement"""""
 
-    def __init__(self, increasing_speed):
+    def __init__(self):
         super().__init__()
         self.penup()
         self.speed = BALL_DEFAULT_SPEED
-        self.increasing_speed = increasing_speed
         self.shape(BALL_SHAPE)
         self.x_direction = BALL_DIRECTION_DEFAULT_VALUE
         self.y_direction = BALL_DIRECTION_DEFAULT_VALUE
@@ -76,4 +75,4 @@ class Ball(Turtle):
     def increase_speed(self, increase_speed=True):
         """Increases the ball speed"""""
         if increase_speed:
-            self.speed += self.increasing_speed
+            self.speed += BALL_INCREASE_SPEED_VALUE
