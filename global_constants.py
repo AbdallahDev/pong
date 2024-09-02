@@ -25,6 +25,11 @@ PADDLE_DIRECTION_MAINTAIN_VALUE = 1
 
 # segment file
 SEGMENT_STEPS = 20
+SEGMENT_SHAPE = 'square'
+SEGMENT_COLOR = 'black'
+SEGMENT_DEFAULT_WIDTH = 1
+SEGMENT_DEFAULT_LENGTH = 1
+SEGMENT_DEFAULT_DIRECTION = 1
 SEGMENT_CEILING_HIT_POINT = (SCREEN_HEIGHT / 2)
 SEGMENT_FLOOR_HIT_POINT = -(SCREEN_HEIGHT / 2)
 
@@ -63,3 +68,11 @@ BALL_INCREASE_SPEED_VALUES = (0.5, 1, 1.5)
 DIFFICULTY_PROMPT_MSG = "Choose a difficulty (easy: 1, medium: 2 hard: 3): "
 DIFFICULTY_PROMPT_TITLE = "Difficulty"
 DIFFICULTY_PROMPT_MSG_ERROR = "Please choose a proper difficulty (easy, medium, hard): "
+
+# playing mode class
+SINGLE_MODE_DEFAULT_VALUE = True
+SINGLE_MODE_NEGATE_VALUE = False
+PLAYING_MODE_PROMPT_TITLE = 'Playing Mode'
+PLAYING_MODE_PROMPT_TXT = "Choose a playing mode (1:single, 2:two):"
+PLAYING_MODE_FIRST_INDX = "Choose a playing mode (1:single, 2:two):"
+PLAYING_MODE_SECOND_INDX = "Choose a playing mode (1:single, 2:two):"
