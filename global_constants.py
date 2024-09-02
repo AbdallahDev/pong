@@ -2,6 +2,7 @@
 
 # main file
 KEYS = ('Up', 'Down', 'w', 's')
+SLEEP_TIME = 1 / 100000000000000000
 
 # arena file
 SCREEN_WIDTH = 800

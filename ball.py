@@ -8,9 +8,10 @@ from global_constants import BALL_SHAPE, BALL_STRETCH_WID, BALL_STRETCH_LEN, BAL
 class Ball(Turtle):
     """"Represents the ball movement"""""
 
-    def __init__(self,increasing_speed):
+    def __init__(self, increasing_speed):
         super().__init__()
         self.penup()
+        self.speed = BALL_DEFAULT_SPEED
         self.increasing_speed = increasing_speed
         self.shape(BALL_SHAPE)
         self.x_direction = BALL_DIRECTION_DEFAULT_VALUE
@@ -21,8 +22,8 @@ class Ball(Turtle):
     def move(self, r_paddle, l_paddle, r_scoreboard, l_scoreboard):
         """"Moves the ball"""""
         self.goto(
-            self.xcor() + (self.x_direction * self.increasing_speed),
-            self.ycor() + (self.y_direction * self.increasing_speed),
+            self.xcor() + (self.x_direction * self.speed),
+            self.ycor() + (self.y_direction * self.speed),
         )
 
         # checks if the ball hits the left paddle or the right paddle
@@ -68,10 +69,10 @@ class Ball(Turtle):
 
     def center_reposition(self):
         """It will respawn the ball from the center, and reset the ball speed to default value"""""
-        self.increasing_speed = BALL_DEFAULT_SPEED
+        self.speed = BALL_DEFAULT_SPEED
         self.goto(x=0, y=0)
 
     def increase_speed(self, increase_speed=True):
         """Increases the ball speed"""
         if increase_speed:
-            self.increasing_speed += BALL_INCREASE_SPEED_VALUE
+            self.speed += BALL_INCREASE_SPEED_VALUE

@@ -4,23 +4,18 @@ import turtle
 from arena import Arena
 from ball import Ball
 from global_constants import (PROMPT_TITLE, PROMPT_TXT, R_PADDLE_COORDINATES,
-                              L_PADDLE_COORDINATES, R_SCORE_POSITION, L_SCORE_POSITION, KEYS)
+                              L_PADDLE_COORDINATES, R_SCORE_POSITION, L_SCORE_POSITION, KEYS, SLEEP_TIME)
 from paddle import Paddle
 from scoreboard import ScoreBoard
 from difficulty import Difficulty
 
 
-def test():
-    print('press')
-
-
 def game():
     turtle.tracer(0)
-    turtle.listen()
 
     difficulty = Difficulty()
     Arena()
-    ball = Ball()
+    ball = Ball(difficulty.ball_increasing_speed)
 
     r_scoreboard = ScoreBoard(position=R_SCORE_POSITION)
     r_paddle = Paddle(coordinates=R_PADDLE_COORDINATES)
@@ -28,6 +23,7 @@ def game():
     l_scoreboard = ScoreBoard(position=L_SCORE_POSITION)
     l_paddle = Paddle(coordinates=L_PADDLE_COORDINATES)
 
+    turtle.listen()
     turtle.onkeypress(fun=r_paddle.go_up, key=KEYS[0])
     turtle.onkeypress(fun=r_paddle.go_down, key=KEYS[1])
     turtle.onkeypress(fun=l_paddle.go_up, key=KEYS[2])
@@ -39,7 +35,7 @@ def game():
             end_game = True
 
         turtle.update()
-        time.sleep(0.01)
+        time.sleep(SLEEP_TIME)
 
 
 while True:
