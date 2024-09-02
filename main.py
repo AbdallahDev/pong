@@ -10,11 +10,14 @@ from global_constants import (PROMPT_TITLE, PROMPT_TXT, R_PADDLE_COORDINATES,
 from paddle import Paddle
 from scoreboard import ScoreBoard
 from difficulty import Difficulty
+from playing_mode import PlayingMode
 
 
 def game():
     turtle.tracer(TRACER_DEFAULT_VALUE)
 
+    playing_mode = PlayingMode()
+    single_mode = playing_mode.single_mode
     difficulty = Difficulty()
     Arena()
     ball = Ball(difficulty.ball_increasing_speed)
@@ -28,15 +31,17 @@ def game():
     turtle.listen()
     turtle.onkeypress(fun=r_paddle.go_up, key=KEYS[0])
     turtle.onkeypress(fun=r_paddle.go_down, key=KEYS[1])
-    # turtle.onkeypress(fun=l_paddle.go_up, key=KEYS[2])
-    # turtle.onkeypress(fun=l_paddle.go_down, key=KEYS[3])
+    if not single_mode:
+        turtle.onkeypress(fun=l_paddle.go_up, key=KEYS[2])
+        turtle.onkeypress(fun=l_paddle.go_down, key=KEYS[3])
 
     end_game = False
     while not end_game:
         if not ball.move(r_paddle=r_paddle, l_paddle=l_paddle, l_scoreboard=l_scoreboard, r_scoreboard=r_scoreboard):
             end_game = True
 
-        l_paddle.move(ball.ycor())
+        if single_mode:
+            l_paddle.move(ball.ycor())
         turtle.update()
         time.sleep(SLEEP_TIME)
 
