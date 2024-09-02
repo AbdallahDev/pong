@@ -17,5 +17,5 @@ class Segment(Turtle):
     def move(self, direction=1):
         """Moves the segment"""""
         # if the direction -1 that means the segment should moves up, otherwise it should moves down
-        # if CEILING_HIT_POINT > self.ycor() > FLOOR_HIT_POINT:
         self.goto(x=self.xcor(), y=self.ycor() + (direction * SEGMENT_STEPS))
+
