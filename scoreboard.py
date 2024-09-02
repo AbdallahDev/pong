@@ -1,7 +1,7 @@
 from turtle import Turtle
 
 from global_constants import DEFAULT_SCORE, SCORE_INCREASE_VALUE, SCORE_TXT_ALIGNMENT, SCORE_TXT_FONT, \
-    GAME_OVER_TXT, GAME_OVER_ALIGNMENT, GAME_OVER_FONT, GAME_OVER_COLOR, GAME_OVER_POSITION
+    GAME_OVER_TXT, GAME_OVER_ALIGNMENT, GAME_OVER_FONT, GAME_OVER_COLOR, GAME_OVER_POSITION, GAME_OVER_SCORE
 
 
 class ScoreBoard(Turtle):
@@ -30,7 +30,7 @@ class ScoreBoard(Turtle):
 
     def game_over(self):
         """checks if the score reached 10"""
-        if self.score == 10:
+        if self.score == GAME_OVER_SCORE:
             self.goto(GAME_OVER_POSITION)
             self.color(GAME_OVER_COLOR)
             self.write(arg=GAME_OVER_TXT, align=GAME_OVER_ALIGNMENT, font=GAME_OVER_FONT)

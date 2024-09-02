@@ -1,6 +1,6 @@
 import turtle
 from global_constants import BALL_INCREASE_SPEED_VALUES, DIFFICULTY_PROMPT_MSG, DIFFICULTY_PROMPT_TITLE, \
-    DIFFICULTY_PROMPT_MSG_ERROR, PADDLE_CHANCE_DEFAULT_VALUE, PADDLE_CHANCE_LEVELS_VALUES
+    DIFFICULTY_PROMPT_MSG_ERROR, PADDLE_CHANCE_DEFAULT_VALUE, PADDLE_CHANCE_LEVELS_VALUES, DIFFICULTY_LEVELS_VALUES
 
 
 class Difficulty:
@@ -21,11 +21,11 @@ class Difficulty:
 
     def set_speed(self, difficulty_par):
         """based on the chosen difficulty of the snake speed will be set"""""
-        if difficulty_par == 1:
+        if difficulty_par == DIFFICULTY_LEVELS_VALUES[0]:
             self.paddle_movement_chance = PADDLE_CHANCE_LEVELS_VALUES[0]
-        elif difficulty_par == 2:
+        elif difficulty_par == DIFFICULTY_LEVELS_VALUES[1]:
             self.paddle_movement_chance = PADDLE_CHANCE_LEVELS_VALUES[1]
-        elif difficulty_par == 3:
+        elif difficulty_par == DIFFICULTY_LEVELS_VALUES[2]:
             self.paddle_movement_chance = PADDLE_CHANCE_LEVELS_VALUES[2]
         else:
             self.set_difficulty(prompt_msg=DIFFICULTY_PROMPT_MSG_ERROR)
