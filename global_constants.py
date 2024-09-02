@@ -53,7 +53,7 @@ GAME_OVER_COLOR = 'red'
 GAME_OVER_POSITION = (0, (SCREEN_HEIGHT / 2 - 200))
 
 # difficulty class
-BALL_INCREASE_SPEED_VALUES = (0.2, 0.4, 0.6)
+BALL_INCREASE_SPEED_VALUES = (0.5, 1, 1.5)
 DIFFICULTY_PROMPT_MSG = "Choose a difficulty (easy: 1, medium: 2 hard: 3): "
 DIFFICULTY_PROMPT_TITLE = "Difficulty"
 DIFFICULTY_PROMPT_MSG_ERROR = "Please choose a proper difficulty (easy, medium, hard): "

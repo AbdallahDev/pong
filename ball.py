@@ -75,4 +75,4 @@ class Ball(Turtle):
     def increase_speed(self, increase_speed=True):
         """Increases the ball speed"""
         if increase_speed:
-            self.speed += BALL_INCREASE_SPEED_VALUE
+            self.speed += self.increasing_speed
